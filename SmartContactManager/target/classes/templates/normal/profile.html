@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="normal/base::layout(~{::section})">
+<head>
+	<meta charset="UTF-8" />
+	<title>SCM | Home</title>
+</head>
+<body>
+		<section>
+			<div class="container">
+				<div class="card text-center">
+					<div class="card-body">
+					
+					<div class="container text-center ">
+						<img class="my-contact-picture"
+						style="height: 200px; width: 200px;"
+						th:src="@{'/img/'+${user.imageUrl}}" alt="" />
+					</div>
+					
+					<h1 class="text-center mt-3" th:text="${user.name}"></h1>
+						<table class="table">
+						<thead>
+							<tr>
+								<th scope="col">#USER ID</th>
+								<th scope="col"><span th:text="${'SCM2020'+user.id}"></span></th>
+							</tr>
+							
+							<tr>
+								<th scope="col">Email</th>
+								<th scope="col"><span th:text="${user.email}"></span></th>
+							</tr>
+							
+							<tr>
+								<th scope="col">Role</th>
+								<th scope="col"><span th:text="${user.role}"></span></th>
+							</tr>
+							
+							<tr>
+								<th scope="col">Account Active</th>
+								<th scope="col"><span th:text="${user.enabled}"></span></th>
+							</tr>
+							
+							<tr>
+								<th scope="col">About you</th>
+								<th scope="col"><span th:text="${user.about}"></span></th>
+							</tr>
+				
+						</thead>
+						
+					</table>
+					</div>
+				</div>
+			</div>
+		</section>
+</body>
+</html>
